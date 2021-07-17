@@ -3,13 +3,22 @@
 ## Configuration
 Config exists inside appsettings.json. Ensure you have the correct ConnectionStrings
 
+## Prerequisites
+* [PostgresSQL](https://www.postgresql.org/download/)
+* [Net5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
+
 ## Seeding the database
 
 Run the command at the root of the repo:
 ```
+dotnet tool install -g dotnet-ef
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
+
+## Cache Dir
+Create the folder ```AspNetServerData\Cache``` in your users home folder and add the cache
+This can be changed via the appsettings.json
 
 ## Container Modules
 Currently this example uses the 317 modules. There are other revision specific modules available on Nuget to replace these ones.
