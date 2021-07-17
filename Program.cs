@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using Autofac;
+﻿using Autofac;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using NetScape.Core;
-using NetScape.Modules.DAL;
 using NetScape.Modules.Messages;
 using NetScape.Modules.Messages.Models;
 using NetScape.Modules.ThreeOneSeven.Game;
 using NetScape.Modules.ThreeOneSeven.LoginProtocol;
 using NetScape.Modules.ThreeOneSeven.World.Updating;
-
+using System;
+using System.Collections.Generic;
 namespace ANewServer
 {
     class Program
@@ -28,7 +26,7 @@ namespace ANewServer
                 new ThreeOneSevenLoginModule(),
                 new ThreeOneSevenUpdatingModule()
             };
-            ServerHandler.RunServer("appsettings.json", BuildDbOptions, modules);
+            ServerHandler.RunServer<MyPlayer>("appsettings.json", BuildDbOptions, modules);
             Console.ReadLine();
         }
 

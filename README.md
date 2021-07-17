@@ -36,21 +36,25 @@ Currently this example uses the 317 modules. There are other revision specific m
                 new ThreeOneSevenLoginModule(),
                 new ThreeOneSevenUpdatingModule()
             };
-            ServerHandler.RunServer("appsettings.json", BuildDbOptions, modules);
+            ServerHandler.RunServer<MyPlayer>("appsettings.json", BuildDbOptions, modules);
             Console.ReadLine();
 ```
 
 ## Changing Player Schema
-Whenever changing the Player Schema a developer can modify PlayerSave.cs
-
+A user can either use the default Player object or create their own by extending it.
+A example is shown here:
 ```csharp
-    public partial class Player
+    public class MyPlayer : Player
     {
         public string ANewFieldInDb { get; set; }
     }
 ```
 
-After a new field has been added a new migration has to be created and the database has to be updated by running the following commands:
+```chsarp
+ServerHandler.RunServer<MyPlayer>("appsettings.json", BuildDbOptions, modules);
+```
+
+Whenever a new field has been added to the player a new migration has to be created and the database has to be updated by running the following commands:
 ```
 dotnet ef migrations add NewMigrationName
 dotnet ef database update

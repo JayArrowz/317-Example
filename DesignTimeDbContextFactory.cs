@@ -6,16 +6,16 @@ using NetScape.Modules.DAL;
 
 namespace ANewServer
 {
-    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DatabaseContext>
+    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DatabaseContext<MyPlayer>>
     {
-        public DatabaseContext CreateDbContext(string[] args)
+        public DatabaseContext<MyPlayer> CreateDbContext(string[] args)
         {
             var configRoot = ServerHandler.CreateConfigurationRoot("appsettings.json");
-            var optionsBuilder = new DbContextOptionsBuilder<DatabaseContext>();
+            var optionsBuilder = new DbContextOptionsBuilder<DatabaseContext<MyPlayer>>();
             optionsBuilder.UseNpgsql(configRoot.GetConnectionString("NetScape"),
                  x => x.MigrationsAssembly(typeof(Program)
                     .Assembly.GetName().Name));
-            return new DatabaseContext(optionsBuilder.Options);
+            return new DatabaseContext<MyPlayer>(optionsBuilder.Options);
         }
     }
 }
