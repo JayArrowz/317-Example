@@ -1,5 +1,5 @@
 # 317-Example for NetScape
-This is a example of a 317 server.
+This is a example of a 317 server using the Netscape Framework.
 To see NetScape go here: https://github.com/JayArrowz/NetScape
 
 ## Configuration
