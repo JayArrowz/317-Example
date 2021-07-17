@@ -11,6 +11,24 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
+## Container Modules
+Currently this example uses the 317 modules. There are other revision specific modules available on Nuget to replace these ones.
+
+```csharp
+            List<Module> modules = new()
+            {
+                new ThreeOneSevenGameModule(),
+                new MessagesModule(
+                    typeof(ThreeOneSevenEncoderMessages.Types),
+                    typeof(ThreeOneSevenDecoderMessages.Types)
+                ),
+                new ThreeOneSevenLoginModule(),
+                new ThreeOneSevenUpdatingModule()
+            };
+            ServerHandler.RunServer("appsettings.json", BuildDbOptions, modules);
+            Console.ReadLine();
+```
+
 ## Changing Player Schema
 Whenever changing the Player Schema a developer can modify PlayerSave.cs
 
