@@ -1,4 +1,6 @@
 # 317-Example for NetScape
+This is a example of a 317 server.
+To see NetScape go here: https://github.com/JayArrowz/NetScape
 
 ## Configuration
 Config exists inside appsettings.json. Ensure you have the correct ConnectionStrings to the postgres database
