@@ -1,7 +1,7 @@
 # 317-Example for NetScape
 
 ## Configuration
-Config exists inside appsettings.json. Ensure you have the correct ConnectionStrings
+Config exists inside appsettings.json. Ensure you have the correct ConnectionStrings to the postgres database
 
 ## Prerequisites
 * [PostgresSQL](https://www.postgresql.org/download/)
