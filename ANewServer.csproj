@@ -14,10 +14,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="NetScape.Core" Version="1.0.7" />
-    <PackageReference Include="NetScape.Modules.ThreeOneSeven.Game" Version="1.0.7" />
-    <PackageReference Include="NetScape.Modules.ThreeOneSeven.LoginProtocol" Version="1.0.7" />
-    <PackageReference Include="NetScape.Modules.ThreeOneSeven.World.Updating" Version="1.0.7" />
+    <PackageReference Include="NetScape.Core" Version="1.0.8" />
+    <PackageReference Include="NetScape.Modules.ThreeOneSeven.Game" Version="1.0.8" />
+    <PackageReference Include="NetScape.Modules.ThreeOneSeven.LoginProtocol" Version="1.0.8" />
+    <PackageReference Include="NetScape.Modules.ThreeOneSeven.World.Updating" Version="1.0.8" />
   </ItemGroup>
 
   <ItemGroup>
